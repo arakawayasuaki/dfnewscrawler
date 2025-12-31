@@ -246,16 +246,17 @@ def upload_to_gdrive(filename, content):
         service = get_gdrive_service()
 
         file_metadata = {
-            'name': filename,
-            'parents': [folder_id]
+            'name': filename.replace('.md', ''),
+            'parents': [folder_id],
+            'mimeType': 'application/vnd.google-apps.document'
         }
         
         # Create an in-memory file for upload
         fh = io.BytesIO(content.encode('utf-8'))
-        media = MediaIoBaseUpload(fh, mimetype='text/markdown', resumable=True)
+        media = MediaIoBaseUpload(fh, mimetype='text/plain', resumable=True)
         
         file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-        print(f"File uploaded to Google Drive. File ID: {file.get('id')}")
+        print(f"File uploaded and converted to Google Doc. File ID: {file.get('id')}")
         return file.get('id')
     except Exception as e:
         print(f"Error uploading to Google Drive: {e}")

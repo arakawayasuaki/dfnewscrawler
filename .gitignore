@@ -5,3 +5,7 @@ __pycache__/
 fetched_history.json
 .agent
 .DS_Store
+credentials.json
+token.json
+venv/
+.venv/
