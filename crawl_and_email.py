@@ -148,8 +148,13 @@ def update_history(summary_text):
 def main():
     print("Starting Deepfake News Crawler...")
     urls = search_news()
+    
+    subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
+    
     if not urls:
         print("No new articles found.")
+        summary = "本日（過去1-2日）の新しいディープフェイク関連ニュースは見つかりませんでした。"
+        send_email(subject, summary)
         return
         
     summary = summarize_with_gemini(urls)
@@ -160,7 +165,6 @@ def main():
         f.write(summary)
         
     # Send email
-    subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
     if send_email(subject, summary):
         update_history(summary)
     
