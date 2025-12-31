@@ -31,131 +31,53 @@ resend.api_key = RESEND_API_KEY
 HISTORY_FILE = "fetched_history.json"
 OUTPUT_FILE = "latest_deepfake_news.md"
 
-# Site list from workflow
-TARGET_SITES = [
-    "gizmodo.com",
-    "cyberscoop.com",
-    "gigazine.net",
-    "soumu.go.jp",
-    "digital.go.jp",
-    "cas.go.jp" # 内閣府
-]
-
-def search_news():
-    print("Searching for news...")
-    results = []
-    
-    with DDGS() as ddgs:
-        # General search for latest (both English and Japanese)
-        queries = [
-            "ディープフェイク ニュース 自民党",
-            "ディープフェイク 最新 対策",
-            "deepfake news latest 2025",
-            "AI 偽動画 被害"
-        ]
-        
-        for q in queries:
-            try:
-                print(f"Searching for: {q}")
-                # DDGS text search supports 'timelimit' (d: day, w: week, m: month)
-                ddgs_results = ddgs.text(q, max_results=15, timelimit="w")
-                for r in ddgs_results:
-                    url = r['href']
-                    if url not in results:
-                        results.append(url)
-            except Exception as e:
-                print(f"Error in general search for '{q}': {e}")
-                
-        # Site specific search
-        for site in TARGET_SITES:
-            is_japenese_site = site in ["gigazine.net", "soumu.go.jp", "digital.go.jp", "cas.go.jp"]
-            query_word = "ディープフェイク" if is_japenese_site else "deepfake"
-            site_query = f"site:{site} {query_word}"
-            try:
-                ddgs_results = ddgs.text(site_query, max_results=5, timelimit="w")
-                for r in ddgs_results:
-                    url = r['href']
-                    # Clean up: ignore relative paths and non-http links
-                    if url.startswith("http") and url not in results:
-                        results.append(url)
-            except Exception as e:
-                print(f"Error searching {site}: {e}")
-    print(f"Total unique URLs found: {len(results)}")
-    return list(set(results))
-
-def fetch_content(url):
-    try:
-        response = requests.get(url, timeout=10)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        # Simple heuristic to get main text
-        for script in soup(["script", "style"]):
-            script.decompose()
-        text = soup.get_text(separator=' ', strip=True)
-        return text[:5000] # Limit size for LLM
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
-
-def summarize_with_gemini(urls):
+def generate_report_with_gemini_search():
+    """
+    Generate a news report using Gemini's native Google Search grounding.
+    """
     if not GEMINI_API_KEY:
         return "Gemini API Key is not set."
     
     genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('models/gemini-2.0-flash')
     
-    # Shuffle URLs to get diverse results if many
-    shuffled_urls = list(urls)
-    random.shuffle(shuffled_urls)
+    # Configure model with Google Search Tool
+    model = genai.GenerativeModel(
+        model_name='models/gemini-2.0-flash',
+        tools=[{'google_search_retrieval': {}}]
+    )
     
-    # Gather some content to summarize
-    content_samples = []
-    for url in shuffled_urls[:20]: # Increase limit to 20
-        txt = fetch_content(url)
-        if txt:
-            content_samples.append(f"Source: {url}\nContent: {txt[:1000]}")
-            
-    if not content_samples:
-        return None
-
     today = datetime.date.today().strftime('%Y年%m月%d日')
     custom_prompt = os.getenv("CUSTOM_PROMPT")
     
     if custom_prompt:
-        # If user provided a specific prompt, use it
         prompt = f"""
         今日は {today} です。
-        以下の資料をもとに、以下の指示に従って要約・レポート作成してください。
+        Google検索を使用して、以下の指示に従い最新の情報を調査・要約して日本語のレポートを作成してください。
         
         【指示内容】
         {custom_prompt}
-        
-        【記事情報】
-        {chr(10).join(content_samples)}
         """
     else:
-        # Default prompt
         prompt = f"""
         今日は {today} です。
-        以下のディープフェイクに関する最新ニュース（過去1-2日以内）の情報を要約し、日本語で詳細なレポートを作成してください。
+        Google検索を使用して、最新のディープフェイク（Deepfake）に関するニュースや動向（特に過去1-2日以内）を調査し、日本語で詳細なレポートを作成してください。
         
-        【重要指示】
-        - 発見されたニュースをできるだけ多く（最大15件程度）個別にリストアップしてください。
-        - 各記事について以下の構成で作成してください：
+        【構成案】
+        - 発見された主要なニュースを最大15件程度リストアップする。
+        - 各項目には：
             1. タイトル（日本語）
-            2. 要約（日本語で2-3文程度）
-            3. 出典と日付（判明する場合）
-            4. URL
-        
-        記事情報：
-        {chr(10).join(content_samples)}
+            2. 調査結果に基づいた詳細な要約（日本語で解説）
+            3. 出典（URL・メディア名）
+        を含めてください。
         """
     
     try:
+        print("Executing Gemini Search (Grounding)...")
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
-        print(f"Error with Gemini: {e}")
-        return None
+        print(f"Error with Gemini Search: {e}")
+        return f"レポート生成中にエラーが発生しました: {e}"
 
 # G1 Technology Official Logo URL
 LOGO_URL = "https://www.g1tec.jp/images/logo_yoko.jpg"
@@ -317,26 +239,15 @@ def update_history(summary_text):
         json.dump(history, f, indent=2, ensure_ascii=False)
 
 def main():
-    print("Starting Deepfake News Crawler...")
-    urls = search_news()
+    print("Starting Deepfake News Crawler (Gemini Search Mode)...")
     
-    subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
+    summary = generate_report_with_gemini_search()
     
-    if not urls:
-        print("No new articles found.")
-        summary = "本日（過去1-2日）の新しいディープフェイク関連ニュースは見つかりませんでした。"
-        send_email(subject, summary)
+    if not summary or "エラーが発生しました" in summary:
+        print("Crawler execution failed.")
         return
-        
-    summary = summarize_with_gemini(urls)
-    
-    if not summary or "Error with Gemini" in summary:
-        print("Summarization failed or hit quota, providing URL list as fallback.")
-        summary = "## 発見されたニュースURL（要約取得制限中）\n\n"
-        summary += "Geminiでの要約生成が制限されています。以下に発見されたニュースのURL（上位15件）を記載します：\n\n"
-        for url in urls[:15]:
-            summary += f"- {url}\n"
-        summary += "\n※Gemini APIの無料枠制限（Quota）に達した可能性があります。詳細な要約が必要な場合は、しばらく時間をおいてから再実行するか、直接ソースをご確認ください。"
+
+    subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
 
     # Save to file
     with open(OUTPUT_FILE, "w") as f:

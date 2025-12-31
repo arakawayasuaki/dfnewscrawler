@@ -1,11 +1,7 @@
-requests
-beautifulsoup4
 google-generativeai
-python-dotenv
-duckduckgo-search
-markdown
 resend
+markdown
+python-dotenv
 google-api-python-client
-google-auth
 google-auth-oauthlib
 google-auth-httplib2
