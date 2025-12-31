@@ -1,11 +1,7 @@
 import os
 import datetime
 import json
-import requests
-import random
 import markdown
-from bs4 import BeautifulSoup
-from duckduckgo_search import DDGS
 from google import genai
 from google.genai import types
 import resend
