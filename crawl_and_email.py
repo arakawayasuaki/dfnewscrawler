@@ -43,29 +43,23 @@ def generate_report_with_gemini_search():
     client = genai.Client(api_key=GEMINI_API_KEY)
     
     today = datetime.date.today().strftime('%Y年%m月%d日')
-    custom_prompt = os.getenv("CUSTOM_PROMPT")
+    custom_prompt = os.getenv("CUSTOM_PROMPT", "")
     
-    if custom_prompt:
-        prompt = f"""
-        今日は {today} です。
-        Google検索を使用して、以下の指示に従い最新の情報を調査・要約して日本語のレポートを作成してください。
-        
-        【指示内容】
-        {custom_prompt}
-        """
-    else:
-        prompt = f"""
-        今日は {today} です。
-        Google検索を使用して、最新のディープフェイク（Deepfake）に関するニュースや動向（特に過去1-2日以内）を調査し、日本語で詳細なレポートを作成してください。
-        
-        【構成案】
-        - 発見された主要なニュースを最大15件程度リストアップする。
-        - 各項目には：
-            1. タイトル（日本語）
-            2. 調査結果に基づいた詳細な要約（日本語で解説）
-            3. 出典（URL・メディア名）
-        を含めてください。
-        """
+    # Create additional instruction block if user provided one
+    additional_instr = f"\n【追加の個別指示】\n{custom_prompt}\n" if custom_prompt else ""
+    
+    prompt = f"""
+    今日は {today} です。
+    Google検索を使用して、最新のディープフェイク（Deepfake）に関するニュースや動向（特に過去1-2日以内）を調査し、日本語で詳細なレポートを作成してください。
+    {additional_instr}
+    【構成案】
+    - 発見された主要なニュースを最大15件程度リストアップする。
+    - 各項目には：
+        1. タイトル（日本語）
+        2. 調査結果に基づいた詳細な要約（日本語で解説）
+        3. 出典（URL・メディア名）
+    を含めてください。
+    """
     
     try:
         print("Executing Gemini Search (Grounding via google.genai)...")
