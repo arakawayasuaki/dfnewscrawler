@@ -154,11 +154,23 @@ def get_gdrive_service():
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                print(f"Token refresh failed: {e}")
+                return None
         else:
-            # The file name provided by the user is 'credentials.json'
-            flow = InstalledAppFlow.from_client_secret_file('credentials.json', SCOPES)
-            creds = flow.run_local_server(port=0)
+            if not os.path.exists('credentials.json'):
+                print("credentials.json not found. Skipping interactive login (likely running in a headless environment).")
+                return None
+            
+            # This part will only run locally or where credentials.json is provided
+            try:
+                flow = InstalledAppFlow.from_client_secret_file('credentials.json', SCOPES)
+                creds = flow.run_local_server(port=0)
+            except Exception as e:
+                print(f"Error during interactive auth flow: {e}")
+                return None
         
         # Save the credentials for the next run
         with open('token.json', 'w') as token:
@@ -248,19 +260,19 @@ def main():
 
     subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
 
-    # Save to file
+    # Send email FIRST to ensure delivery
+    if send_email(subject, summary):
+        update_history(summary)
+    
+    # Save to local file for record
     with open(OUTPUT_FILE, "w") as f:
         f.write(f"# Deepfake News Report - {datetime.datetime.now().strftime('%Y-%m-%d')}\n\n")
         f.write(summary)
     
-    # Upload to Google Drive
+    # Upload to Google Drive (if possible)
     today_str = datetime.datetime.now().strftime('%Y-%m-%d')
     gdrive_filename = f"deepfake_news_{today_str}.md"
     upload_to_gdrive(gdrive_filename, summary)
         
-    # Send email
-    if send_email(subject, summary):
-        update_history(summary)
-    
 if __name__ == "__main__":
     main()
