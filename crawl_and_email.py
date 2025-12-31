@@ -6,7 +6,8 @@ import random
 import markdown
 from bs4 import BeautifulSoup
 from duckduckgo_search import DDGS
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import resend
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -33,18 +34,13 @@ OUTPUT_FILE = "latest_deepfake_news.md"
 
 def generate_report_with_gemini_search():
     """
-    Generate a news report using Gemini's native Google Search grounding.
+    Generate a news report using Gemini's native Google Search grounding via google.genai SDK.
     """
     if not GEMINI_API_KEY:
         return "Gemini API Key is not set."
     
-    genai.configure(api_key=GEMINI_API_KEY)
-    
-    # Configure model with Google Search Tool
-    model = genai.GenerativeModel(
-        model_name='models/gemini-2.0-flash',
-        tools=[{'google_search_retrieval': {}}]
-    )
+    # Configure client
+    client = genai.Client(api_key=GEMINI_API_KEY)
     
     today = datetime.date.today().strftime('%Y年%m月%d日')
     custom_prompt = os.getenv("CUSTOM_PROMPT")
@@ -72,8 +68,17 @@ def generate_report_with_gemini_search():
         """
     
     try:
-        print("Executing Gemini Search (Grounding)...")
-        response = model.generate_content(prompt)
+        print("Executing Gemini Search (Grounding via google.genai)...")
+        # Configure search tool
+        config = types.GenerateContentConfig(
+            tools=[types.Tool(google_search=types.GoogleSearch())]
+        )
+        
+        response = client.models.generate_content(
+            model='gemini-2.0-flash',
+            contents=prompt,
+            config=config
+        )
         return response.text
     except Exception as e:
         print(f"Error with Gemini Search: {e}")
