@@ -8,6 +8,10 @@ from bs4 import BeautifulSoup
 from duckduckgo_search import DDGS
 import google.generativeai as genai
 import resend
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseUpload
+from google.oauth2 import service_account
+import io
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -199,6 +203,41 @@ def generate_email_html(summary_text):
 """
     return full_html
 
+def upload_to_gdrive(filename, content):
+    """
+    Upload a file to a specific Google Drive folder using a service account.
+    """
+    folder_id = os.getenv("GDRIVE_FOLDER_ID")
+    service_account_info = os.getenv("GOOGLE_SERVICE_ACCOUNT_INFO")
+    
+    if not folder_id or not service_account_info:
+        print("Skipping Google Drive upload: GDRIVE_FOLDER_ID or GOOGLE_SERVICE_ACCOUNT_INFO not set.")
+        return None
+
+    try:
+        # Load credentials from environment variable
+        info = json.loads(service_account_info)
+        creds = service_account.Credentials.from_service_account_info(
+            info, scopes=['https://www.googleapis.com/auth/drive.file']
+        )
+        service = build('drive', 'v3', credentials=creds)
+
+        file_metadata = {
+            'name': filename,
+            'parents': [folder_id]
+        }
+        
+        # Create an in-memory file for upload
+        fh = io.BytesIO(content.encode('utf-8'))
+        media = MediaIoBaseUpload(fh, mimetype='text/markdown', resumable=True)
+        
+        file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+        print(f"File uploaded to Google Drive. File ID: {file.get('id')}")
+        return file.get('id')
+    except Exception as e:
+        print(f"Error uploading to Google Drive: {e}")
+        return None
+
 def send_email(subject, body):
     if not RESEND_API_KEY:
         print("RESEND_API_KEY not set.")
@@ -263,6 +302,11 @@ def main():
     with open(OUTPUT_FILE, "w") as f:
         f.write(f"# Deepfake News Report - {datetime.datetime.now().strftime('%Y-%m-%d')}\n\n")
         f.write(summary)
+    
+    # Upload to Google Drive
+    today_str = datetime.datetime.now().strftime('%Y-%m-%d')
+    gdrive_filename = f"deepfake_news_{today_str}.md"
+    upload_to_gdrive(gdrive_filename, summary)
         
     # Send email
     if send_email(subject, summary):
