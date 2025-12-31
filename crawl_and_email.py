@@ -118,21 +118,37 @@ def summarize_with_gemini(urls):
         return None
 
     today = datetime.date.today().strftime('%Y年%m月%d日')
-    prompt = f"""
-    今日は {today} です。
-    以下のディープフェイクに関する最新ニュース（過去1-2日以内）の情報を要約し、日本語で詳細なレポートを作成してください。
+    custom_prompt = os.getenv("CUSTOM_PROMPT")
     
-    【重要指示】
-    - 発見されたニュースをできるだけ多く（最大15件程度）個別にリストアップしてください。
-    - 各記事について以下の構成で作成してください：
-        1. タイトル（日本語）
-        2. 要約（日本語で2-3文程度）
-        3. 出典と日付（判明する場合）
-        4. URL
-    
-    記事情報：
-    {chr(10).join(content_samples)}
-    """
+    if custom_prompt:
+        # If user provided a specific prompt, use it
+        prompt = f"""
+        今日は {today} です。
+        以下の資料をもとに、以下の指示に従って要約・レポート作成してください。
+        
+        【指示内容】
+        {custom_prompt}
+        
+        【記事情報】
+        {chr(10).join(content_samples)}
+        """
+    else:
+        # Default prompt
+        prompt = f"""
+        今日は {today} です。
+        以下のディープフェイクに関する最新ニュース（過去1-2日以内）の情報を要約し、日本語で詳細なレポートを作成してください。
+        
+        【重要指示】
+        - 発見されたニュースをできるだけ多く（最大15件程度）個別にリストアップしてください。
+        - 各記事について以下の構成で作成してください：
+            1. タイトル（日本語）
+            2. 要約（日本語で2-3文程度）
+            3. 出典と日付（判明する場合）
+            4. URL
+        
+        記事情報：
+        {chr(10).join(content_samples)}
+        """
     
     try:
         response = model.generate_content(prompt)

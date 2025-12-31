@@ -3,7 +3,12 @@ name: Daily Deepfake News Crawl
 on:
   schedule:
     - cron: '0 23 * * *' # 23:00 UTC is 08:00 JST next day
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch:
+    inputs:
+      custom_prompt:
+        description: 'Custom prompt for Gemini'
+        required: false
+        default: ''
 
 jobs:
   crawl_and_email:
@@ -28,4 +33,5 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          CUSTOM_PROMPT: ${{ github.event.inputs.custom_prompt || '' }}
         run: python crawl_and_email.py
