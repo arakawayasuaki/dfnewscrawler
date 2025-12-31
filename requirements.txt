@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+google-generativeai
+python-dotenv
+googlesearch-python
+markdown
+resend
