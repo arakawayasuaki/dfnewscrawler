@@ -242,6 +242,10 @@ def main():
         print("Crawler execution failed.")
         return
 
+    print("--- GENERATED SUMMARY START ---")
+    print(summary)
+    print("--- GENERATED SUMMARY END ---")
+
     subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
 
     # Save to file
