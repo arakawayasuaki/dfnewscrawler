@@ -8,9 +8,11 @@ from bs4 import BeautifulSoup
 from duckduckgo_search import DDGS
 import google.generativeai as genai
 import resend
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
-from google.oauth2 import service_account
 import io
 from dotenv import load_dotenv
 
@@ -203,24 +205,45 @@ def generate_email_html(summary_text):
 """
     return full_html
 
+# If modifying these scopes, delete the file token.json.
+SCOPES = ['https://www.googleapis.com/auth/drive.file']
+
+def get_gdrive_service():
+    """
+    Authenticate and return the Drive service using OAuth2.
+    """
+    creds = None
+    # The file token.json stores the user's access and refresh tokens, and is
+    # created automatically when the authorization flow completes for the first time.
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            # The file name provided by the user is 'credentials.json'
+            flow = InstalledAppFlow.from_client_secret_file('credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        
+        # Save the credentials for the next run
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+    
+    return build('drive', 'v3', credentials=creds)
+
 def upload_to_gdrive(filename, content):
     """
-    Upload a file to a specific Google Drive folder using a service account.
+    Upload a file to a specific Google Drive folder using OAuth2.
     """
     folder_id = os.getenv("GDRIVE_FOLDER_ID")
-    service_account_info = os.getenv("GOOGLE_SERVICE_ACCOUNT_INFO")
-    
-    if not folder_id or not service_account_info:
-        print("Skipping Google Drive upload: GDRIVE_FOLDER_ID or GOOGLE_SERVICE_ACCOUNT_INFO not set.")
+    if not folder_id:
+        print("Skipping Google Drive upload: GDRIVE_FOLDER_ID not set.")
         return None
 
     try:
-        # Load credentials from environment variable
-        info = json.loads(service_account_info)
-        creds = service_account.Credentials.from_service_account_info(
-            info, scopes=['https://www.googleapis.com/auth/drive.file']
-        )
-        service = build('drive', 'v3', credentials=creds)
+        service = get_gdrive_service()
 
         file_metadata = {
             'name': filename,
