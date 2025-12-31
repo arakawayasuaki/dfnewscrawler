@@ -1,4 +1,7 @@
 .env
 *.log
+job_log*.txt
 __pycache__/
 fetched_history.json
+.agent
+.DS_Store
