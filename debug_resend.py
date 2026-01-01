@@ -60,19 +60,36 @@ def debug_resend():
 
     # Test Send
     print("\n[3] Attempting Realistic Report Send...")
-    mock_body = "### GHA Environment Debug\nThis is a test email sent from GitHub Actions to verify delivery."
+    mock_body = """
+### GHA 環境デバッグ - 本格的なレポートテスト
+
+1. **AI生成動画による詐欺の急増**
+   最近、著名人を騙った投資詐欺動画が増加しています。
+   [詳細はこちら](https://example.com/news1)
+
+2. **政府、ディープフェイク対策の新指針を策定**
+   内閣府は偽情報の拡散防止に向けた新たなガイドラインを公開しました。
+   [公式サイト](https://www.cas.go.jp/)
+
+3. **OpenAI、動画生成における透かし技術を導入**
+   AIで生成されたコンテンツであることを識別可能にする技術が普及しています。
+   [ニュースソース](https://gizmodo.com/)
+
+---
+このメールはGitHub Actions環境からの配信テストです。
+"""
     
     params = {
         "from": sender,
         "to": [recipient],
-        "subject": "【DEBUG GHA】Delivery Test: " + fingerprint(sender),
+        "subject": "【DEBUG GHA】Realistic Report Test: " + fingerprint(sender),
         "text": mock_body,
         "html": generate_email_html(mock_body)
     }
 
     try:
         response = resend.Emails.send(params)
-        print(f" ✅ Resend Accepted the email!")
+        print(f" ✅ Resend Accepted the realistic report!")
         print(f" Response Metadata: {json.dumps(response, indent=2)}")
     except Exception as e:
         print(f" ❌ Send failure: {e}")
