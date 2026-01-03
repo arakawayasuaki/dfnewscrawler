@@ -1,5 +1,6 @@
 import os
 import datetime
+from datetime import timezone, timedelta
 import json
 import markdown
 from google import genai
@@ -12,6 +13,9 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
 import io
 from dotenv import load_dotenv
+
+# Define JST (Japan Standard Time)
+JST = timezone(timedelta(hours=9))
 
 # Load environment variables
 load_dotenv()
@@ -38,7 +42,9 @@ def generate_report_with_gemini_search():
     # Configure client
     client = genai.Client(api_key=GEMINI_API_KEY)
     
-    today = datetime.date.today().strftime('%Y年%m月%d日')
+    # Use JST for the date in the prompt
+    jst_now = datetime.datetime.now(JST)
+    today = jst_now.strftime('%Y年%m月%d日')
     custom_prompt = os.getenv("CUSTOM_PROMPT", "")
     
     # Create additional instruction block if user provided one
@@ -46,17 +52,25 @@ def generate_report_with_gemini_search():
     
     prompt = f"""
     今日は {today} です。
-    Google検索を使用して、最新のディープフェイク（Deepfake）に関するニュースや動向（特に過去24時間〜48時間以内）を調査し、日本語で詳細なレポートを作成してください。
+    Google検索を使用して、最新のディープフェイク（Deepfake）に関するニュースや動向（特に過去24時間〜48時間以内）を網羅的に調査し、日本語で詳細なレポートを作成してください。
+
     {additional_instr}
-    【構成案】
-    - 最も重要と思われるニュースを厳選して 5件〜8件程度 リストアップする。
-    - 各項目には：
-        1. タイトル（日本語）
-        2. 具体的な内容の要約（日本語で3-4文程度）
-        3. 出典（必ず [メディア名・サイト名](URL) という形式の Markdown リンクで記述）
-    を含めてください。
+
+    【レポートの構成】
+    1. **主要ニュースのまとめ (10件〜15件程度)**
+       - 各項目には以下の内容を必ず含めてください：
+         - 番号付きの見出し：タイトル（日本語）
+         - 内容の要約：具体的かつ客観的に3〜4文程度で記述
+         - 出典：必ず `出典: [メディア名・サイト名](URL)` の Markdown 形式で記述
     
-    【重要】出典のURLは必ず [リンクテキスト](URL) の Markdown 形式で出力してください。また、情報は可能な限り最新（今日・昨日）のものに絞ってください。
+    2. **その他の注目見出し (多数リストアップ)**
+       - 上記に含められなかったニュースやブログ記事、技術動向などを、タイトルと出典リンクののみ形式で可能な限り多くリストアップしてください。
+
+    【制約事項】
+    - 「承知いたしました」「レポートを作成します」といった冒頭の挨拶や、末尾の結びの言葉は一切不要です。
+    - レポートのタイトル（例：最新のディープフェイクニュース）から直接書き始めてください。
+    - 出典のURLは、リンク切れのない正確なものを記述してください。
+    - 情報は可能な限り最新（今日・昨日、または直近2日間）のものに絞ってください。
     """
     
     try:
@@ -248,7 +262,8 @@ def update_history(summary_text):
         json.dump(history, f, indent=2, ensure_ascii=False)
 
 def main():
-    print("Starting Deepfake News Crawler (Gemini Search Mode)...")
+    jst_now = datetime.datetime.now(JST)
+    print(f"Starting Deepfake News Crawler (Gemini Search Mode) at {jst_now} JST...")
     
     summary = generate_report_with_gemini_search()
     
@@ -260,7 +275,7 @@ def main():
     print(summary)
     print("--- GENERATED SUMMARY END ---")
 
-    subject = f"【Deepfake最新ニュース】{datetime.datetime.now().strftime('%Y/%m/%d')}"
+    subject = f"【Deepfake最新ニュース】{jst_now.strftime('%Y/%m/%d')}"
 
     # Send email FIRST to ensure delivery
     if send_email(subject, summary):
@@ -268,11 +283,11 @@ def main():
     
     # Save to local file for record
     with open(OUTPUT_FILE, "w") as f:
-        f.write(f"# Deepfake News Report - {datetime.datetime.now().strftime('%Y-%m-%d')}\n\n")
+        f.write(f"# Deepfake News Report - {jst_now.strftime('%Y-%m-%d')}\n\n")
         f.write(summary)
     
     # Upload to Google Drive (if possible)
-    today_str = datetime.datetime.now().strftime('%Y-%m-%d')
+    today_str = jst_now.strftime('%Y-%m-%d')
     gdrive_filename = f"deepfake_news_{today_str}.md"
     upload_to_gdrive(gdrive_filename, summary)
         
