@@ -1,44 +1,72 @@
-# Deepfake News Report - 2025-12-31
+# Deepfake News Report - 2026-01-03
 
-承知いたしました。本日2025年12月31日時点でのディープフェイクに関する最新ニュースを調査し、日本語でレポートを作成します。
+# 最新のディープフェイクニュース (2026年1月3日)
 
-以下に、2025年12月31日時点でのディープフェイクに関する最新ニュースと動向のレポートをまとめました。
+1.  **性的ディープフェイクによる被害が急増、中高生や小学生も対象に**
 
-**ディープフェイク関連ニュースと動向 (2025年12月30日 - 2025年12月31日)**
+生成AIの悪用により、一般人の写真から性的な画像や動画が作成される事例が相次いでいます。卒業アルバムの写真が悪用されるケースも発生しており、子供家庭庁も対策を議論しています。警察庁によると、性的ディープフェイクに関する相談や通報は昨年100件を超えました.
 
-1.  **タイトル：ディープフェイクは2025年に新たなレベルへ：顔、声、全身パフォーマンスが見分けられない時代に**
+出典: [関西テレビ](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTtFNYsAXJjKwMlB39Vm9GgptvRY09jhe__oU12tqLGAHu-Byd8yXI6Ydo_uA1QjCo7h3WulX0OaetumWPyARINHd7rTDdpwqICL3d-VUJStx43qC_HWnUXW23VkvLzA==)
 
-    *   **要約：** 2025年、ディープフェイク技術は劇的な進化を遂げ、AIによって生成された顔、声、全身の動きは、専門家でさえ見分けるのが困難なレベルに達しました。特に、低解像度のビデオ通話やSNSで共有されるメディアにおいて、そのリアリズムは一般の人々を欺くのに十分なレベルとなっています。ディープフェイクの数は2023年の約50万件から2025年には約800万件に爆発的に増加し、年間成長率は約900%に達しています。また、数秒の音声から自然なイントネーション、リズム、強調、感情を持つ説得力のある音声クローンが作成可能になっています。2026年には、リアルタイムでのディープフェイク合成が登場し、ライブビデオ通話でのなりすましが可能になると予測されています.
-    *   **出典：** [GenMediaLab](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0x7NUwAZl6vuCGTWRL0oxqmA-NVUMhNIhZPjO8ORR0VWtrIHsKROURViY-s3vzw1U5f6V177xKM4AjGd8oGDIJKFhuqrCQUoYUxZtfIWbgYVc5leSR0vNy66od8Rq0533taL0bSOt8zP0ap5-v1txZkahadStb3Ed6LjLgw==)
+2.  **中国、AI生成コンテンツの規制を強化**
 
-2.  **タイトル：「AI動画」の“進化の功罪” 誰もが簡単に生成…指示しない動画も生成？ “リスク”と“展望”**
+中国の国家ラジオテレビ総局は、主要な文化的作品や歴史的トピックを歪曲するAI生成またはAI修正されたコンテンツの取り締まりキャンペーンを2026年1月1日から開始します。
 
-    *   **要約：** AI技術の進化により、誰もが容易に動画を生成できるようになりましたが、その一方で、ディープフェイクが拡散する懸念も高まっています。指示していない動画が生成される事例も報告されており、AI動画の利用にはリスクが伴います。しかし、AI動画の進化は、創造的な表現やビジネスの可能性を広げるものであり、リスクを認識しながら、その進化と向き合っていく必要があります.
-    *   **出典：** [日テレNEWS NNN](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAtgUuEFexPaFsJD1wtwG0ptyq25LbVo4CNhvlZRKwRfTck7YlO3jXPMXR4X8inbu7SPtMVvyYCYZu00gKwUc6p4z4wqpfUTcKL3yf96rpIH93SpHTPx7b1X0HUOENWJTwdxB0_CYsdUwEewM_)
+出典: [YouTube](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN1LvdXaC2KoT3BGDjkakXzr51isN-ESCoY3UZ8cDq-VdcMbP_M507swtZYO6JSwM7aiZL8OG-MSRTnQu9QcdcSopTdx-gxiLnYEoWnxH2l5bjX-HrXJdbrxQQVUvtkhrP8i68u5A=)
 
-3.  **タイトル：2025年のAI、5つのトレンド【光と闇】**
+3.  **AIによる選挙介入のリスク**
 
-    *   **要約：** 2025年のAIトレンドとして、プライバシーを保護しながらデバイス上でAI支援を受けられる未来が到来する一方で、「悪用の民主化」が進んでいます。身近な人物の写真から性的ディープフェイクが作成されたり、AIチャットを利用してハッキングツールが作成されるなど、AIの悪用事例が後を絶ちません。また、AI開発側の権利意識の低さも問題となっており、著作権を軽視した学習利用に対する反発も起きています.
-    *   **出典：** [ライブドアニュース](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTuII6a-6T8hFpYqwIMMcsjQVVjEDcrcIfw1IS7WIcakof4HS1orq-h7CJ5RHYYPqCw-KO3ESIsE0sJ1szaaIWCWixDlyy36J-A1Ck-cmKtqQv7YGG9OQi_kuItw7qgCRHMsWdtWnXDNCZ4sAQ)
+AIが悪用され、有権者を巧妙に「説得」して意識や意見を変えさせるリスクが深刻化しています。特に、次のアメリカ大統領選において、AIが大規模に展開される可能性が指摘されています.
 
-4.  **タイトル：ディープフェイクや影響工作など偽・誤情報問題は異なる次元へ/JFC記事・動画や関連記事【今週のファクトチェック】**
+出典: [MITテクノロジーレビュー](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETVqNMSLtJ5Fghmo_hCl2HtsVrAUdBlwhqFEn6w5Du-yEk-p8ABMMiJvC2ieMo9ZR04x39JNyo_rrHNfSln58Bu2AaqVNko-jT2w2fHzcpQ5rPI1fkNhpp8Q2Y)
 
-    *   **要約：** 2025年は、生成AIによるディープフェイクや政治系動画など、昨年までとは異なる次元で偽・誤情報が拡散しました。特に参院選では、昨年の衆院選の5倍以上のファクトチェック記事が公開されるなど、偽・誤情報対策への関心が高まっています。しかし、ファクトチェックだけではスピードと数で偽情報に押し負けてしまうため、メディア情報リテラシー教育の普及や法制度、テクノロジー開発が不可欠です.
-    *   **出典：** [日本ファクトチェックセンター](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrqIzzITVWpZ_E9By0n_39pfdYqU9Eo3PMXt_U_gWZqPDPchBFz1evAJElrsmKvV35AtREBoGQro4IONEE_KeZHh7Y27VmXB-YphbQXiBD5bgoXhbN_16l27crVXVRb3WIp_GvC8HV5kYNZzI8SZ0zmfNXijax1xDZI0-5ct-ey98hItRpUgg=)
+4.  **ディープフェイクの進化と悪用増加**
 
-5.  **タイトル：エッホエッホ、ナルトダンス、バイトテロ 25年のSNSではなにが起こった?**
+ディープフェイクの品質が向上し、専門家でさえ見分けが困難になるレベルに達しています。オンライン上のディープフェイクの件数は2023年の約50万件から2025年には約800万件に増加し、年間増加率は900%近くに達すると推定されています.
 
-    *   **要約：** 2025年のSNSはAIの影響が色濃く出た一年となりました。生成AIで作られる偽・誤情報やディープフェイクの拡散が本格化し、SNS上の画像がAIによるものなのか判別できるかという点でSNSリテラシーが試されるようになりました。もし誹謗中傷や権利侵害にあってしまったら、すぐにSNS事業者に削除申請を行い、適切な相談窓口に相談することが重要です.
-    *   **出典：** [Impress Watch](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESVGHiUobPfHT8quAXCg6223e0PBvKxt7WD9nggc_N7GrpU9IfBc5BlEolpfV81tRSSQWXBXD1EbNFFpfs76OyVwFSm72SaM9rHD7uditJlaMA7rWYeuQ4uVwAZ_31cnsl8ahd9mgh6MnfaQNX_P32jkM=)
+出典: [XenoSpectrum](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBke4KOdWjx5dlRRSx_gUupHrEL4V47KQ2-u9gpaYuXvX50xqZEB7FX1SuIWbh55KuRv2OqeKO2AHQ-cpqXIOgn1hOTjmvRwj2jY2hJCYWo1xeCNHsr-jNwnOOXYdpRG1Pm4TNTfZTcfJ2HaXk8qKT_XGPmlFPrpYG8U56QifjUvHxvLw6zZouLw==)
 
-6.  **タイトル：2025年のディープフェイクの進化 – 次に何が来るのか**
+5.  **ディープフェイクによる詐欺被害の深刻化**
 
-    *   **要約：** ディープフェイク技術は2025年に驚くべき進化を遂げ、特に映像と音声のリアリズムが向上しました。AI生成メディアは、一般の人々や機関を欺くのに十分なリアリズムを持つようになり、オンラインのディープフェイクは2023年の約50万件から2025年には約800万件に増加すると予測されています。音声クローン技術も進化し、数秒の音声から自然なイントネーションを持つクローンが作成可能になりました。今後、リアルタイムでの合成が進むことで、ディープフェイクはさらなる進化を遂げると予測されています.
-    *   **出典：** [AI flash24](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh2AxClB4qEOgmMKxAJ7MQN_rRr5FVIdeI7BfoHlKKHIkeQwzA5zyxrREYW3_athz_xUNcyfB7tAmhIYVb_7qRz7FdOR652XAfirl-EbdVdu_3-_STttkPJNVGbo4=)
+2025年第1四半期だけで、ディープフェイク詐欺による世界的な被害額が300億円近くに達しました。経営幹部になりすまして送金を指示するケースが急増しており、AIを活用した新たな従業員トレーニングが求められています.
 
-7.  **タイトル：著名人装うYouTubeチャンネル広告をクリックして…50代男性 約1300万円の投資詐欺被害 大分**
+出典: [ビジネス+IT](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO94dxh_q0je3cU9hXrwNS3Jq9lWIYoxXyOqg6y7Ua_yA3C5bj2JsTHJZDNUQdkKUrdGDHEwi3uyyzSfr2LA4ezLsfqZtDoczolUTgslCIzW-IwBtNZJ1zKuiqwQGCMuNOzIS3)
 
-    *   **要約：** 大分県で、著名人のYouTubeチャンネルを装う広告をクリックした50代男性が、SNS型投資詐欺により約1300万円を騙し取られる被害が発生しました。警察は、SNSのグループ内で知り合った人に投資を任せることの危険性を警告しています.
-    *   **出典：** [テレビ大分](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs7l9IZMF8KPaAy2rvBG1nb3-5LyjAHSoMK8WBoBzOJgJGP8XH0wyDdzo-OBo0ON2N15XxB6xSw5OPGW-VBaCpEp44CCeOrSz-Wlvu5kVw4JDYmJnsxVF50acZeec9dQ==)
+6.  **AIの悪用事例：「性的ディープフェイク」作成、ハッキングツール作成**
 
-上記のニュースから、ディープフェイク技術の進化と、それによって引き起こされる問題が深刻化していることがわかります。偽情報の拡散、詐欺、プライバシー侵害など、様々なリスクが存在するため、技術の進歩に合わせた対策が急務となっています。また、個々人がメディアリテラシーを高め、情報を見極める力を養うことも重要です.
+身近な人物の写真から「性的ディープフェイク」を作成したり、AIチャットを利用してハッキングツールを作成したりする事例が報告されています。AIが悪用されるケースが増加しており、対策が求められています.
+
+出典: [ライブドアニュース](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiiUbYC21EkZeTUUNGQKX-ELYPQE9bCoBqiJdS_beaXepZ5UoU_DLKY9h5Qx73dpOJ5E7diNnFZDBp7JRdy2FZb-YQB6HmzZ_gvrtHwf4l2919ORa2OFLT15tjkvFnEvXb_y4iWgp9LQU70Woe)
+
+7.  **AIによるサイバー犯罪の一般化**
+
+AI技術の進化により、サイバー犯罪がより簡単になり、攻撃者の数と標的となる被害者数が激増しています。AIコーディングアシスタントが悪用され、複数国にまたがる組織に対するデータ恐喝が行われた事例も報告されています.
+
+出典: [EY Japan](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFP10IoKidkQAo2q219vY-niCyCaCIuPqjgjptzwdytEWfoc5g99htnPMTRi5mT6oelOYmA0eeqfUcLNTJhkpYPlL4lvs4GZGvvr1D8LxFgC7_YQ7hIw3J-Dn24l-XIzsaOH84vPzSW-x_8W09jEJXqYoTTWYi7tg73LyuLnBS_C_TcwRMM1FKQ6Q7u1k9BJFNWvD_an1t4Q18ezhGgJuHuLPN-cI=)
+
+8.  **TurboDiffusionによる動画生成の高速化とリスク**
+
+清華大学らが発表したTurboDiffusionは、AI動画生成を最大200倍高速化しますが、ディープフェイクや偽情報の脅威が深刻化する可能性があります。情報の信頼性低下やメディアリテラシーの重要性など、社会的課題が浮き彫りになっています.
+
+出典: [Qiita](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeMBrkwPtzCPY_fQFDWZzZdpUtYlbCMbdLxGZfvlN_xnMM--cYR-4w-5T8xI7Vc1H7-_BJvVjqH6tbKYGFMwlrM-6nekP9Scau1jyCT50OxFl_Vf5EpgAm7hUm0_kbUmjGIJDIWZeTAengTBmspqG9Kg2PKnA=)
+
+9.  **中小企業におけるAIクローンの活用**
+
+中小企業オーナーがAIクローンを作成し、音声や顔、専門知識を複製することで、コスト削減や生産性向上が期待できます。AIクローン市場は成長しており、企業はすでにコスト削減や生産性向上を実現しています.
+
+出典: [Forbes JAPAN](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdRfkrxY19E5P8Sbm_JERdLw8OJD6aD_olg4F9RxpGubRNZwwdNMun3Hx3AN68qL-6zYnndczdQwWb-FEfmdslwRCyAQaRk1TBJuUfZ0iESbYfReKcpMybtK4QBJ9t9UNdV24anuZg_A==)
+
+10. **EU AI規制法の完全施行と企業への影響**
+
+2026年はEU AI規制法の完全施行年であり、日本企業にとっても「本人確認」という業務の根幹を見直す転換点となります。ディープフェイクによる詐欺被害が増加しており、認証システムの信頼性が問われる時代となっています.
+
+出典: [SignTime](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4Uj8mf2UiT84NCDD_esMj0n4PEZhyKUU1Le6UjsBwIyBHNxpesgzvEhk7pjN2Vfgfj_dfOKwEH1-nL62jt70uVeAP8n7jjv_oWZbIFf9B3IsBXx7nPlE83piRUfnz63LzXUinXKjLYrCJ1doZj8Ys2lIQWtp-CTtGpHMwr5EhwXtk)
+
+## その他の注目見出し
+
+*   AIで作るニセ情報｢ディープフェイク｣氾濫の脅威 まんまと騙され社会混乱､ニセモノ見抜くには 出典: [東洋経済オンライン](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL29aAzgjuett85IX0MbtVOUbtuNPj1taqdI_yT3QkuqTZmCz6p31w4mlOcr_J92OFnIhwqHTMZvFdUCwffSEiVHlC0YjkGrviWAnd2PSipoNKinphPQZKGACHOeiLmJ8awf57kb97QXg4Hma7)
+*   「ディープフェイクに関する実態調査2024年版」から見えてきた脅威を解説 - Trend Micro 出典: [トレンドマイクロ](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwi9DczEJG_jsMlVOQE206H6Aatk2piwvMVTTsA_Bj7TZ-4Mkh6m11wayePOeXuERjt5gzSoIVVicqfAbVKwz1I8qs_5Nux5USiRJhzCdUo8i_M2vXoIUWuYNw0FBkco_EHNRS7G6e1oQBlgx63opChhHWGR-RIeg09Dj-QX290xI9Sd5E5E5JpLgB)
+*   【衝撃】普通の取材だと思っていたら、相手はディープフェイクでした 【#みんなのギモン DEEP】 出典: [YouTube](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLFsfyarrvasOV5Sbvb5rA_WkWcNTc79_q1aVUqLVlq4d0n7V4RaaSeabE2UkS7hVHDbNGq9rT3GU6GQnQOtq5yu6_6z_DNIHgYGzT2dfSBq_VsPGyd559dTND30t25fzcs36b8W8=)
+*   【2026】Deep Fakeとは？スマホ利用可能なアプリ7選・使い方・危険性について解説 出典: [Appliv](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNU7wiMLAM-Vcot08uMa0L1AJZyljOEVDS8vISpboxYmFp0ex1bV8tJr-yZmcSo2woIxlc0YpG3hXLmLFWfYnrgU_ro-wg3Fo8A0zWtVejnX1YmBGXX0-zBh0MMlttmPhdE2nO)
+*   【無料】ディープフェイクとは？作り方とおすすめアプリ・サイト ７ 選【2026年最新版】 出典: [PhotoDirector](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7WkCUPkiMmhIpAKD_QgBXLM0hxoH7NJwe7lJPxHiAp5q0WfKmAHSx5UVDIPEaiU6tA6UwNvL9nE5_q4NwQeAEHV6x7OdG8TxtmmxiuwseSXoaxTteJIdwObLODSoWyzNvl387EjdBM5rp0frAGvh7ZNtImZYzUF6fy9bwsChioiu-h56jI1_BzerGB3Aw)
+*   2025年のAI、5つのトレンド【光と闇】 - ライブドアニュース 出典: [ライブドアニュース](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiiUbYC21EkZeTUUNGQKX-ELYPQE9bCoBqiJdS_beaXepZ5UoU_DLKY9h5Qx73dpOJ5E7diNnFZDBp7JRdy2FZb-YQB6HmzZ_gvrtHwf4l2919ORa2OFLT15tjkvFnEvXb_y4iWgp9LQU70Woe)
