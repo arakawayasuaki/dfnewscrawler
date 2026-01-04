@@ -52,39 +52,42 @@ def generate_report_with_gemini_search():
 
     prompt = f"""
     今日は {today} です。
-    最新のディープフェイク（Deepfake）に関するニュースや動向（直近24〜48時間以内）を調査し、日本語で網羅的なレポートを作成してください。
+    最新のディープフェイク（Deepfake）に関するニュースや動静（直近24〜48時間以内）を調査し、日本語で網羅的なレポートを作成してください。
 
     {additional_instr}
 
-    【レポート作成の絶対ルール - 違反厳禁】
-    1. **挨拶・前置きの完全禁止**: 
-       - 「はい」「承知いたしました」「レポートを作成します」といった言葉、および「2026年1月4日のレポートです」のような独自のタイトルは**一切出力しないでください**。
-       - 出力の1文字目は、必ず以下の「## 主要ニュースのまとめ」から始めてください。
-    
-    2. **構造の固定（段落崩れ防止）**:
-       - 各ニュース項目は、Markdownの `###` 見出しを使用して、完全に独立したブロックとして記述してください。
-       - 箇条書きやインデントに頼らず、以下の形式を10番（またはそれ以上）まで正確に繰り返してください。
+    【重要：情報の正確性と接地（Grounding）】
+    - **必ず実際の検索結果に基づいた情報を出力してください。** 架空のニュースや、根拠のない推測を含めてはいけません。
+    - **ダミーURLの禁止**: `example.com` や `google.com` などのプレースホルダーURLは**絶対に使用しないでください**。見つかった「実際のURL」のみを使用してください。
+    - **URLの重複について**: 可能な限り異なるソースを使用することが望ましいですが、適切なソースが限られている場合は、情報の正確性を優先し、同じ信頼できるソースを引用しても構いません。**「形式のために嘘のURLを捏造すること」は最大の禁忌です。**
+
+    【レポートの出力ルール】
+    1. **挨拶・前置きの完全禁止**: 「はい」「承知いたしました」等は一切不要です。必ず `## 主要ニュースのまとめ` から開始してください。
+    2. **構造の安定化**: 各ニュース項目の間には、**必ず2行の空行**を入れてください。
 
     【レポートの構成形式】
     ## 主要ニュースのまとめ (10〜15件程度)
     
-    ### 1. [記事のタイトル（日本語翻訳）](URL)
+    ### 1. [記事のタイトル（日本語翻訳）](取得した実際のURL)
     - **内容**: 具体的かつ客観的に3〜4文程度で記述（日本語）。
-    - **出典**: [メディア名・サイト名（日本語）](URL)
+    - **出典**: [メディア名・サイト名（日本語）](取得した実際のURL)
 
-    ### 2. [次の記事のタイトル（日本語翻訳）](URL)
+
+    ### 2. [次の記事のタイトル（日本語翻訳）](取得した実際のURL)
     - **内容**: ...
     - **出典**: ...
 
-    （10〜15件まで同様の形式で継続）
+
+    （実際の検索結果に基づき、10〜15件程度を同様の形式で継続）
+
 
     ## その他の注目見出し
-    * [記事タイトル（要日本語翻訳）](URL) - メディア名
-    * (可能な限り多数リストアップ)
+    * [記事タイトル（要日本語翻訳）](実際のURL) - メディア名
+    * (可能な限り多数、必ず実際のリンクを含めること)
 
     【検索と収集の指針】
-    - **グローバル優先**: 海外の主要ソース（英語メディア等）を50%以上含めてください。
-    - **鮮度の徹底**: 3日以上前の古い情報は含めず、今日・昨日の具体的な「出来事」を優先してください。
+    - **グローバル優先**: 英語等の多言語検索を行い、海外の主要ソースを50%以上含めてください。
+    - **鮮度の徹底**: 「今起きていること」を優先し、一般的な解説や古いニュースは除外してください。
     """
     
     try:
@@ -99,10 +102,44 @@ def generate_report_with_gemini_search():
             contents=prompt,
             config=config
         )
-        return response.text
+        summary = response.text
+        
+        # Post-processing: Remove Gemini conversational filler and redundant titles
+        clean_summary = clean_gemini_output(summary)
+        return clean_summary
     except Exception as e:
         print(f"Error with Gemini Search: {e}")
         return f"レポート生成中にエラーが発生しました: {e}"
+
+def clean_gemini_output(text):
+    """
+    Programmatically strip common AI conversational filler and redundant headers.
+    """
+    # Patterns to remove from the beginning of the text
+    forbidden_start_patterns = [
+        "はい、承知いたしました",
+        "承知いたしました",
+        "はい、2026",
+        "レポートを作成します",
+        "最新のディープフェイク",
+        "以下に、2026",
+        "申し訳ございません",
+        "Google検索を使用して",
+        "承知しました"
+    ]
+    
+    lines = text.strip().split('\n')
+    while lines and any(p in lines[0] for p in forbidden_start_patterns):
+        lines.pop(0)
+    
+    # Rejoin and remove leading empty lines/whitespace
+    cleaned_content = '\n'.join(lines).strip()
+    
+    # Ensure it doesn't accidentally remove actual content
+    if not cleaned_content:
+        return text.strip()
+        
+    return cleaned_content
 
 # G1 Technology Official Logo URL
 LOGO_URL = "https://www.g1tec.jp/images/logo_yoko.jpg"
