@@ -1,49 +1,62 @@
 # Deepfake News Report - 2026-01-04
 
-はい、承知いたしました。2026年1月4日時点の最新のディープフェイクに関するニュースと動向について、以下の通りレポートします。
+## 主要ニュースのまとめ (10〜15件程度)
 
-### 主要ニュースのまとめ (10件)
+### 1. [ディープフェイク・アズ・ア・サービスが2025年に急増：合成アイデンティティが2026年の脅威をどのように形作るか](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIDUZsDTaldHNhpgXMMUOCWy61q9kEU6FM_rWINc-bHnvo9Xc7NVmeo8qszGb6iZWutTclDirlLmqId_f35vzYTpEWYWQRc9aXLVJxThgOYENf0kuEeh8pANDY6pZ7u9k10_oIgHtyTlvzxBFPnk4_uiSG0iNYCMOrNw0dvlgqwSM=)
+- **内容**: 2025年は、サイバー犯罪者にとってディープフェイク・アズ・ア・サービス（DaaS）が最も急速に成長したツールの一つとして台頭し、サイバー脅威の状況における転換点となった。Cybleのエグゼクティブ脅威モニタリングレポートによると、AIを搭載したディープフェイクは、2025年に発生した影響の大きい企業インパーソネーション攻撃の30％以上に関与している。
+- **出典**: [Cyble](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIDUZsDTaldHNhpgXMMUOCWy61q9kEU6FM_rWINc-bHnvo9Xc7NVmeo8qszGb6iZWutTclDirlLmqId_f35vzYTpEWYWQRc9aXLVJxThgOYENf0kuEeh8pANDY6pZ7u9k10_oIgHtyTlvzxBFPnk4_uiSG0iNYCMOrNw0dvlgqwSM=)
 
-1.  **見出し：生成AIでわずか30秒　性的な画像作成も…「性的ディープフェイク」の実態　中高生さらに小学生も被害に**\
-    内容の要約：生成AIを利用した性的ディープフェイク被害が急増しており、卒業アルバムの写真が悪用される事例も発生しています。警察庁によると、性的ディープフェイクに関する相談や通報は昨年100件を超えました。デジタル性暴力の通報活動を行う「ひいらぎネット」代表の永守すみれさんが現状を解説しています.\
-    出典: [FNNプライムオンライン](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiat92YE-M9FAYmb1Ie6o0RO39a83gJNFMId3NnVXOcA10kfGgvOdfcG0s5PHs9viyVSqqUNZapKmuthkxmoaJLmhDnP9hemiZeJD75qUdvmXB4bkEy0lUwRQ7CkJZ2w==)
-2.  **見出し：2026年、ディープフェイク詐欺で2億ドル以上の損害が発生、誰もが被害者になる可能性**\
-    内容の要約：Resemble AIの報告によると、2025年の最初の3ヶ月間で、ディープフェイクを使った詐欺により世界中で2億ドル以上の損害が発生しています。被害者の41%は政治家や著名人などの公人ですが、34%は一般市民です。技術専門家は、ディープフェイクが極めて危険な詐欺ツールになりつつあると警告しており、法的枠組みの標準化が急務であると述べています.\
-    出典: [Vietnam.vn](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeZI3ZryFhAPykMp8YCF4DtvjKWpvsQkGhEFcSxX27cugzUsTLkTZiMD-8tS-PfkCSuR7oge2OHb5DCVWSqHvgWUCWrvTHawg4igNjCmmX6niDY5665rsl5GBU69OLS-Itt4cDT3Jo306ZEj_D7EaFEjYKF7wQoBE931NvQIHelcZAGUb23QDi-a3jkLMf8LwEs90NS6a5v9acU9nlHkN6nHGes5AEdPu7tkx07A==)
-3.  **見出し：トレンドマイクロ、2026年はAI駆動型詐欺が拡大すると予測**\
-    内容の要約：トレンドマイクロは、2026年にはAIが詐欺を前例のない規模に拡大させると予測しています。サイバー犯罪者は、自動化と感情操作を組み合わせ、驚くほどのスピードとリアリズムで詐欺を仕掛けてきます。AIチャットボット、ディープフェイク、操作された画像が現実と合成の区別を曖昧にし、暗号資産関連の投資詐欺が拡大すると予測されています.\
-    出典: [Trend Micro](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoa3M_LHaiD5EoA_tilGwT1q-VrQd8YI7ndU40fd7c-kGVY41MJsmPAIw0rKcVP2blGwYVhkiBo9bg2MSDYU2r8aTm3hlI7IBZaw9XQ8Ye8szCHFD--lpR3Nd26FRNPEKOXbzlbXq1D-dLsyzgmTObY7_sARZcaGJLgUiHhYz5Gx6nmBDZf8FJA_4eX7HN11yNXOHBkZKREKgPSMMM_U_BW-EE_7Adgmi7s_z6YCifoC6QZc-97xETvMBRzu09KOzt5GOZB-4=) , [Trend Micro](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgoqEmFmanULkpRxgQVRywtVUl_8ElpyYMw1uPu9ksS8X9g5V8ooquZVGF69QYrX4Ynxwjf4A_NHeWaYgKbsL2uvarnJ5gz6vWHNgAK4Hu962_4KH28U6i9ZGT3kM3yDE6yLCfDTr7-S3CNRXrOeoXhn3Dmsu0hFlvSUVJvAea7zbxZSpCZ7MN-WytGq6miIuHCl4g)
-4.  **見出し：2026年はディープフェイクに騙される年になる、研究者が警告**\
-    内容の要約：2025年を通じてディープフェイクの品質が劇的に向上し、声のクローン作成は「区別がつかないレベル」に達しました。一般の人々にとって、合成メディアと本物の記録を区別することが困難になっています。AIによって生成された顔、声、全身のパフォーマンスは、専門家の予想をはるかに超える品質になっています.\
-    出典: [Fortune](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzyTIhBAhk3BPfKzmHOOwJHt1d0wZ5FXW0sd3FtFypywtqvCXE_qx_473sluB-DXBB5D0_wt5RNXHrLpMnNTVEeyGIfHAJJBKXCGZr-0yQRWKPVHu8ggG2rU18DMGGgU5tWuQVgG9FZKAF7Iv0FEU67ru5E_JaCEgBmg==)
-5. **見出し：AI不正エージェントが2026年に加速すると予測**
+### 2. [ディープフェイクと偽情報に対処する韓国の法律が米国から冷遇](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFGvLy6mObql-DjmupHoASEaoGaSuiWcB3A-RvvL7kE79qVjC20ljsNXwXeaEMsuL5ZP3tJ1UFpeEpL1zzzJLrBaWr-f3bMDKpKtXP8WBSAle_pJIpKBNhqyOynqBI6FMiUHei0YB06-UBKpHPKX3y5LiGME2y7DHPAReZGOOCmH5XyRQrhSduLNz1Byo_OKyMb5hH3Y3GCZyzV07xy9FyAUJN7RFViduMMjUtmxsf1x4=)
+- **内容**: 韓国の新たな法律は、ディープフェイクや合成類似物を含む虚偽または捏造された情報を公開し、検証可能な損害を引き起こした場合、「従来のニュースやインターネットメディア」に対して重い懲罰的損害賠償を科すことを目指している。この法律は、ニュース機関や大規模なYouTubeチャンネルが「違法な情報または虚偽の、捏造された情報」を流布した場合、裁判所が証明された損害の最大5倍の懲罰的損害賠償を命じることを可能にする。
+- **出典**: [BiometricUpdate.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFGvLy6mObql-DjmupHoASEaoGaSuiWcB3A-RvvL7kE79qVjC20ljsNXwXeaEMsuL5ZP3tJ1UFpeEpL1zzzJLrBaWr-f3bMDKpKtXP8WBSAle_pJIpKBNhqyOynqBI6FMiUHei0YB06-UBKpHPKX3y5LiGME2y7DHPAReZGOOCmH5XyRQrhSduLNz1Byo_OKyMb5hH3Y3GCZyzV07xy9FyAUJN7RFViduMMjUtmxsf1x4=)
 
-    内容の要約：Sumsubの調査によると、AI不正エージェントが2026年に本格化すると予想されています。これらの自律システムは、生成AI、自動化、行動模倣を利用して、エンドツーエンドの検証を試みます。APAC地域では、ディープフェイクのインシデントが急増しており、特にモルディブ、マレーシア、モンゴル、タイ、スリランカで顕著です.
-    出典: [FutureCIO](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvKZGU9Bh4LgB10IbnhxL7n0oZYomjms94cMtPSU7LNCR6W0M_sa_GclSH8ePtFIYXIbFcKBULop15yQo5VMuFd59OhW1snpB8x8mv9RMtT-rP3gdlhET1B4edqrafgBreDmOhCA6LHY0-_uYxyMKt7WchEzAVVvZGMn4kLbK8j4vyc9okjRHIeUzdjA==)
-6.  **見出し：ディープフェイク規制の最前線：2026年に企業が備えるべき法的リスクと対策**\
-    内容の要約：2026年はEU AI規制法の完全施行年であり、企業は「本人確認」業務の根幹を見直す必要があります。日本のAI新法は基本法的性格にとどまり罰則規定がない一方、グローバルではディープフェイク攻撃が深刻化しています。企業の30%が顔認証単独での本人確認を「信頼性不十分」と判断すると予測されています.\
-    出典: [GLOBSEC](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzRlQnn0aSpJ39vspIeraZB45b2nExUWVQZbER2e3493_moYNI8A6U-Adwx6l0bDmIpb_jvGpeMDFCX-gKPd6Tq4wRQ0jt-Il5dezt_9owTAzWFj5HbqQckrfgk--hjYz5VJYDH6V1MNCC9X1YEHRP9T0Z65b0J9XLiXEySAKc4jIr)
-7.  **見出し：AI不正検出の2026年：セキュリティおよびリスクリーダーが知っておくべきこと**\
-    内容の要約：2026年、不正行為は従来のルールや閾値では対応できないほど高速化しています。セキュリティリーダーは、リアルタイムの行動インテリジェンスに移行し、AIを使用してユーザー、デバイス、チャネルの正常な行動をモデル化し、早期に異常を検出し、誤検知を削減する必要があります。世界経済フォーラムは、AIによるサイバー犯罪が2030年までに年間10兆ドルを超える可能性があると予測しています.\
-    出典: [Protegrity](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEHxcNlcEs-MD3QlsEH5OS35q_v5aR6KIhtBPFq1xx8ePpYHiCrM_968ijp_JCrMb-yL43AHd2WcN9GvtBpVwylwf0KRwzeSfofldOAo1eYW91ySwrjhDTufVO0VTn6cFT7zmm5mg0yemuUKzix27yhHb1wDkwnM9Um-IyF_bbvemNni3eX3875PV0pCo=)
-8.  **見出し：ジャベド・アクタル、ターピーをかぶったディープフェイク動画を非難、法的措置の可能性も**\
-    内容の要約：著名な作詞家であるジャベド・アクタルが、彼がターピーをかぶって神に頼っているという誤った内容のディープフェイク動画を強く非難しました。アクタル氏は、この動画が誤解を招くものであるとし、関係者に対して法的措置を取る可能性を示唆しています.\
-    出典: [India TV News](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaIQu_G9PDOWILEWjTLZgPmBDhqqmdnSMcQK62vxb9PObblAfJE_2MaUmvpZ2843QtPf7RN1bYiaUbpCQer968zNw_QnW6lmfAjzKwwSMMc3XGfZNCU0Md7wLe_dw=)
-9.  **見出し：ディープフェイク規制が本格化、世界が注目するデンマークの一手**\
-    内容の要約：デンマークでは、デジタル著作権法の一環として新たなディープフェイク規制法案が提案されています。この法案は、AIによって生成されたディープフェイクが及ぼす影響から個人の権利を保護することを目的としています。世界経済フォーラムは、官民連携を加速させ、ディープフェイクを含む有害なオンラインコンテンツへの対策を強化すると同時に、デジタルメディアリテラシーの向上を推進することを目指しています.\
-    出典: [世界経済フォーラム](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHowukXG2M0dn3FPTcRRGemWXQamD2lQilXKDcJH2PypvoEczQ7AidQ6AM3W_dSZmChz89F3ro9H20iSQCKTdNia9hUeBKYrJ7gKpGT7PZBQ1XaVkcArC-TAhuOk_zkOMvXfU2a9BeTBZcXkmk6NtWvPlTC_oLmJ09J47AAQGvsUYaeB6Z-hNswJZcKIZQ=)
-10. **見出し：2026年のAIガバナンス展望**
+### 3. [AP報道：ディープフェイク・サイバーいじめの増加が学校にとって深刻な問題となっている](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTtdTmPOwTs5D69o5dq7bLSY797Tf5Y5EP02VjJ0_2i7FusfNLlba876SomsM_7nVf_sFMiGueYCNlNbQXylsDFPjAm8nCXEbCOwOAr6kNC2lcJKKtlprvwZ_DNr0wYkctl1zAa9w1sE_m4FhdrZEknOAOAccF2rdQvxfveCzGqP8WdizYPbQX2rOd9K6ZKXoighqkhmA63TxK0-YNhC5I2WY7ncyM33cVC0wkgw==)
+- **内容**: 学校は、生徒が人工知能を使ってクラスメートの無邪気な画像を性的に露骨なディープフェイクに変換する問題に直面している。ルイジアナ州の中学校でAIが生成したヌード画像が広まったことが、この問題の深刻さを浮き彫りにした。
+- **出典**: [PBS NewsHour](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTtdTmPOwTs5D69o5dq7bLSY797Tf5Y5EP02VjJ0_2i7FusfNLlba876SomsM_7nVf_sFMiGueYCNlNbQXylsDFPjAm8nCXEbCOwOAr6kNC2lcJKKtlprvwZ_DNr0wYkctl1zAa9w1sE_m4FhdrZEknOAOAccF2rdQvxfveCzGqP8WdizYPbQX2rOd9K6ZKXoighqkhmA63TxK0-YNhC5I2WY7ncyM33cVC0wkgw==)
 
-    内容の要約：2025年はAI規制の政策設計が急速に進み、実装フェーズに移行した転換点でした。EU AI法の完全施行を目前に控え、欧州の状況、米中英を含めた世界的な規制の断片化、そして企業ガバナンスに求められる変容について議論されています。中国は、アルゴリズム推奨、生成AI、ディープフェイク等に関して、世界で最も詳細かつ迅速な規制フレームワークを構築しています.
-    出典: [note](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNBhm70M4WxVaMppmIIASsy-kMyxvvvFMFqcpyP-jYCrs-TGsFZFI0I0psiIH4pcx5UDMZDmUuL4MPawdxBOcJggRC693f8aUAi2LluoilJd2TVpb1Yz3n49esU1B3FT-DRmzFzPAVn9w071c=)
+### 4. [AIディープフェイクが2026年までにモバイルサイバー脅威の増加を牽引 - SecurityBrief UK](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjpClK3_QRCZk70sE38_EcIxg3JIJydeAofdnTu64dzYKWJy7h7P5ZhBiozK0j-Ok8toS61B97LIdyKcAg5fgZNG3UAogm_amK_D7YN1YfBWOYh9X_k4I5NE-E5nAC0BrJ2K6b3KaGR9oINRJyp_4mse_vmCpjfdTh5tYHxjz2EVTj1uMFfklCdwYoiaGT50qWG_zEAQA=)
+- **内容**: Jamfは、犯罪者が公共イベント、モバイルデバイス、ソーシャルメディア上のエグゼクティブのプロフィールを悪用するため、2026年までに人工知能がより洗練されたソーシャルエンジニアリング攻撃とディープフェイク詐欺を助長すると予測している。Jamfの戦略担当VPであるMichael Covingtonは、AIはシステムではなく人間を標的にする方法を変えると述べている。
+- **出典**: [SecurityBrief UK](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjpClK3_QRCZk70sE38_EcIxg3JIJydeAofdnTu64dzYKWJy7h7P5ZhBiozK0j-Ok8toS61B97LIdyKcAg5fgZNG3UAogm_amK_D7YN1YfBWOYh9X_k4I5NE-E5nAC0BrJ2K6b3KaGR9oINRJyp_4mse_vmCpjfdTh5tYHxjz2EVTj1uMFfklCdwYoiaGT50qWG_zEAQA=)
 
-### その他の注目見出し
+### 5. [2026年の展望：ディープフェイク検出の世界でこれから起こること - Reality Defender](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfjab8prpMjoNQhIu6gm52jyN8Ovjlf6Ags38NGYqeRSP1hsUFNIFVswzApIsez43BD8t-gEvlJ7z3_YA2jcNYIybu3zH2k-yYNAs3TwRyhQU7JY8Q2ma8upx1zUDnZigPrmeYUSWjV3CbIIDo0yulbHNJ7w==)
+- **内容**: Reality DefenderのCEOであるBen Colmanは、ディープフェイクの問題は悪化の一途をたどると予測しており、政府高官がソーシャルエンジニアリングを受け、なりすまされる可能性を指摘している。AIエージェントはこれを増幅させ、1対多の高度な攻撃を、以前よりも少ないリソースと時間で実行できるようになる。
+- **出典**: [Reality Defender](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfjab8prpMjoNQhIu6gm52jyN8Ovjlf6Ags38NGYqeRSP1hsUFNIFVswzApIsez43BD8t-gEvlJ7z3_YA2jcNYIybu3zH2k-yYNAs3TwRyhQU7JY8Q2ma8upx1zUDnZigPrmeYUSWjV3CbIIDo0yulbHNJ7w==)
 
-*   [ディープフェイク規制：2025年に企業が知っておくべきこと](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwIfiUdWMn1IctblFKFphgZrq9SYGcv15tDLzxnvb6igcHOlI5MaG05FnIn9GtJfiYz8Qmg9sW_N5x3tYEZoBKuCE0d1_qO3RU-gZc22LCLDeG8iVThFesgV2e1rXPQk-dPoJpLeQndagZtIXGukvpKRaT7OewXlcdlA8-ExErWaq0d804vfVXVgKswsPJC2WA7pI_qicl4uok14nHNeE2oU9GM_FT80m-6Q==) - Reality Defender
-*   [AI不正エージェントは2026年に加速すると予想される](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvKZGU9Bh4LgB10IbnhxL7n0oZYomjms94cMtPSU7LNCR6W0M_sa_GclSH8ePtFIYXIbFcKBULop15yQo5VMuFd59OhW1snpB8x8mv9RMtT-rP3gdlhET1B4edqrafgBreDmOhCA6LHY0-_uYxyMKt7WchEzAVVvZGMn4kLbK8j4vyc9okjRHIeUzdjA==) - FutureCIO
-*   [2026年のAI不正検出](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEHxcNlcEs-MD3QlsEH5OS35q_v5aR6KIhtBPFq1xx8ePpYHiCrM_968ijp_JCrMb-yL43AHd2WcN9GvtBpVwylwf0KRwzeSfofldOAo1eYW91ySwrjhDTufVO0VTn6cFT7zmm5mg0yemuUKzix27yhHb1wDkwnM9Um-IyF_bbvemNni3eX3875PV0pCo=) - Protegrity
-*   [ディープフェイク規制：今、これまで以上に重要な混沌](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0IQYufCF07q9Rmu_dx0snWgxB9Vfgh8yUGM3HZQdKacXUrDoqNUBiW2qjZ_jNab2_IO7mEs4Rx6VfvnygAWYnT7cOcSIHN6S_vogZSfv2TUy88qlNgeT7rllOlvXXj7FZszoQ) - Whisperly AI
-*   [総務省｜令和6年版 情報通信白書｜偽・誤情報の流通・拡散等の課題及び対策](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFctp1GAat227SNz0slVRqkK7Rw6SlGErSYIskg7i6TMplyLvHMaq-oBQzcXOe0FQlKaC4e-X8G1880gEGOJslrBihcln4OIR1EvRIQ7vlEbvQPRnCy7rkUUdcCE1iHSbonwnlhZSQW8AxQ707DpfWXLoX1PGEpdo9PsN3d18AJC4mGN_ffQ1E=) - 総務省
-*   [ディープフェイクの「精度向上」がヤバすぎる、2027年には被害額6兆円超に](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF8vVYU6qadmq0LsMEAADlCRGiO_4RZE2ViuMY0PoRiqwFf0z7cyYa4Emu3b35Z6zAtPUQmKGRggjLJW_cPJ8Kmk8GHrTwwobD07iN8xEtsZJfFNIauLz-lOntv-jcpm-qce5o) - Business+IT
-*   [2026年のAIガバナンス展望 / 断片化する世界と執行のリアリティ雑感](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNBhm70M4WxVaMppmIIASsy-kMyxvvvFMFqcpyP-jYCrs-TGsFZFI0I0psiIH4pcx5UDMZDmUuL4MPawdxBOcJggRC693f8aUAi2LluoilJd2TVpb1Yz3n49esU1B3FT-DRmzFzPAVn9w071c=) - note
-* [女子生徒のSNS画像をAIで裸の画像に加工…《ディープフェイクポルノの被害者､中学生が5割超》卒業アルバムの悪用は自衛が難しい､どうすれば](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj_o8PAPFjCw-PtCbFtxyC-AA2wAE-wZ4CGREFhYRC1AEZVmNamHBtsclPqydNvGaEEwxQhfJUJHKTfj5H-tVusSR6bj0W4vHSLOXE45SY-GsG_pQrzPpXL762JKHcNCAz1Rqm2hH37sxNNACo) - 東洋経済オンライン
+### 6. [欧州の規制当局が、Grokが未成年者のディープフェイクを作成したことを受けてXを標的に](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQmlKAus127TeRtkgCqVZwRfTqx9b2h_3ON_kT3LzVVnceKaQACnnJjdwvd1i2yyheVKawoq1UemCeXI8wzGQdZWhbrPGZCNOTiwiuvSsR-885DgpaMFOWmNA2GFORrS6AzE_RrvSvAOp4lN4ORdc=)
+- **内容**: 欧州の規制当局は、Elon MuskのソーシャルメディアプラットフォームXの人工知能ツールGrokが、未成年者の性的に露骨な画像を作成するために使用されたことを受けて、Xに対する措置を検討している。Grokは、ユーザーのプロンプトに応答して、14歳の女優の画像から衣服を取り除き、同様の活動が急増している中で広範な怒りを引き起こした。
+- **出典**: [Recorded Future News](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQmlKAus127TeRtkgCqVZwRfTqx9b2h_3ON_kT3LzVVnceKaQACnnJjdwvd1i2yyheVKawoq1UemCeXI8wzGQdZWhbrPGZCNOTiwiuvSsR-885DgpaMFOWmNA2GFORrS6AzE_RrvSvAOp4lN4ORdc=)
+
+### 7. [2026年はディープフェイクに騙される年になるだろう、研究者が語る。音声クローニングは「識別不能な閾値」を超えた | Fortune](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQjiKLSH0q5wNjLkjSso3Ec2pbrPY8zg-WOTEbqrSKOzkT0FbvU3nCKW5Irh0YolDB8MA7smb88l6ykE5asFIyrLT7ILuECiPIjvP9DBkl2tYcNfeTuTPRetX6S7L7sM-smvaXnG8yC7LPg7X84VpUA9Uz04mEJG7Q)
+- **内容**: 2025年の間に、ディープフェイクは劇的に改善され、AIが生成した顔、声、および実在の人物を模倣した全身パフォーマンスは、専門家でさえ数年前には予想していなかったほど品質が向上した。DeepStrikeによると、オンラインのディープフェイクの数は2023年の約50万件から2025年には約800万件に増加し、年間成長率は900％近くになっている。
+- **出典**: [Fortune](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQjiKLSH0q5wNjLkjSso3Ec2pbrPY8zg-WOTEbqrSKOzkT0FbvU3nCKW5Irh0YolDB8MA7smb88l6ykE5asFIyrLT7ILuECiPIjvP9DBkl2tYcNfeTuTPRetX6S7L7sM-smvaXnG8yC7LPg7X84VpUA9Uz04mEJG7Q)
+
+### 8. [信頼性が崩壊する年：2026年のディープフェイク、AI、そして信頼を巡る戦い - Forbes](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZg4uVUSLx3A2WWR9ypaCyoaGSayonaqFX2kIwYEhGAcX9Ad4CkhODAW97J_x3-2UU1AwXhZUGrrqilCZ2Df23VKcKeycm_2VCoUlvX-aAtMJQse7fLZsU3lZflhgoIXtsbd8mKJfFz6jubHRqHuEr850og9B3aVbXBBkXqAEhdDDvnH-tX6V4nVis-OtytjlVEaF3E9xeNsmZSl37BZJWLYUXtGurlYXGteNpI3-yHdFqFCcbYuWL4wHf45ks9yqnbbnUdh1J)
+- **内容**: 2026年、リーダーは、あらゆる顔、声、ブランドメッセージが数分で説得力を持って模倣され、修正が最初の衝撃を上回ることがめったにないコミュニケーション環境に直面する。MIT Initiative On The Digital Economy Research Briefの調査によると、偽情報は検証済みのニュースよりもソーシャルプラットフォームで6倍速く拡散する。
+- **出典**: [Forbes](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZg4uVUSLx3A2WWR9ypaCyoaGSayonaqFX2kIwYEhGAcX9Ad4CkhODAW97J_x3-2UU1AwXhZUGrrqilCZ2Df23VKcKeycm_2VCoUlvX-aAtMJQse7fLZsU3lZflhgoIXtsbd8mKJfFz6jubHRqHuEr850og9B3aVbXBBkXqAEhdDDvnH-tX6V4nVis-OtytjlVEaF3E9xeNsmZSl37BZJWLYUXtGurlYXGteNpI3-yHdFqFCcbYuWL4wHf45ks9yqnbbnUdh1J)
+
+### 9. [Javed Akhtar、AIが生成したディープフェイク動画を非難し、法的措置を取る可能性を示唆](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxyNdBM2dPCjFcyuF9Zi7GK7BhuOwyi4zqjS0os0ycH-ud3KG3WiEtqA9B6J8fIMrnorj4SoiHQ0QoNX7dAnKXa2c60l05y6SjigtsTq2NteGkKGW8C7vwFycdtvurJv4zxDKx52j6DyhQ7u4JC3Pn_D0GV6YEAqtQnnvJ6V13K9RB1g==)
+- **内容**: ベテラン作家で作詞家のJaved Akhtarは、ソーシャルメディアで拡散しているAIが生成した偽の動画を強く非難し、「くだらない」と述べ、クリップを作成および拡散した責任者に対して法的措置を真剣に検討していることを示唆した。Akhtarは、そのような偽の動画は評判と信頼性を損なうと指摘している。
+- **出典**: [NDTV](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxyNdBM2dPCjFcyuF9Zi7GK7BhuOwyi4zqjS0os0ycH-ud3KG3WiEtqA9B6J8fIMrnorj4SoiHQ0QoNX7dAnKXa2c60l05y6SjigtsTq2NteGkKGW8C7vwFycdtvurJv4zxDKx52j6DyhQ7u4JC3Pn_D0GV6YEAqtQnnvJ6V13K9RB1g==)
+
+### 10. [ディープフェイクNDTVビデオ、インド軍将校が辞任したと誤って主張 - News Karnataka](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElJWblC6Wlf1yhxPUVso734gKmzHpyhc8VtsYt3Ny6AT6xr90u_1TChaGjI58rOvttXmzfRCqqGqxJ7WAcYiUopWmjJMKo3d5KWfzGscYY04Ix6vcozq6qo_Hcwhh4poQlT9mXFvqBXzHD3Vyytu5xWdfN3R_mIeCgi7O7eBweoyPYR9sUMHgrN7ZmeOFywr8RzfCXeJx8rhKkaDfGwtwUGzUB)
+- **内容**: ソーシャルメディアで拡散している、15人のインド軍将校の辞任を報道するNDTVニュース速報を装った動画が、人工知能を使用して作成されたディープフェイクであることが確認された。ファクトチェックプラットフォームBOOMは、そのようなニュース速報がNDTVで放送されたことはないと断言した。
+- **出典**: [News Karnataka](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElJWblC6Wlf1yhxPUVso734gKmzHpyhc8VtsYt3Ny6AT6xr90u_1TChaGjI58rOvttXmzfRCqqGqxJ7WAcYiUopWmjJMKo3d5KWfzGscYY04Ix6vcozq6qo_Hcwhh4poQlT9mXFvqBXzHD3Vyytu5xWdfN3R_mIeCgi7O7eBweoyPYR9sUMHgrN7ZmeOFywr8RzfCXeJx8rhKkaDfGwtwUGzUB)
+
+### 11. [2026年のディープフェイク：AIが生成した詐欺から自分のアイデンティティを保護する - Marcellinus Prevailer](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz2KypFniYQXfqhB5SVhLTjmu7tL71nllY4wmMncZkTVmm8Z37mEebMEe2UDVlKWS9ju0ljNRGfU8EH3eKMbPZqulZzCr_8pJSiPSjxQPqmw6HasVQBioHhNj-FQLBoiu9CnLvZyH7qYI-XNlCVWJLU8wve7whC3wLobBDJOdCyzPeL3cqPDGOsQne0maVTBrq2cihMqyZqPeq)
+- **内容**: よりスマートな法律、より迅速な執行、およびグローバルな協力が必要である。EUのAI法（2025年）は、ディープフェイクのラベル表示を開始し、カリフォルニア州のAB 602は、ディープフェイク詐欺を重罪としている。
+- **出典**: [Marcellinus Prevailer](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz2KypFniYQXfqhB5SVhLTjmu7tL71nllY4wmMncZkTVmm8Z37mEebMEe2UDVlKWS9ju0ljNRGfU8EH3eKMbPZqulZzCr_8pJSiPSjxQPqmw6HasVQBioHhNj-FQLBoiu9CnLvZyH7qYI-XNlCVWJLU8wve7whC3wLobBDJOdCyzPeL3cqPDGOsQne0maVTBrq2cihMqyZqPeq)
+
+### 12. [英国AIニュース週刊概要（2025年12月27日 - 2026年1月3日）](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpcJ_zDawOe__g94L7xFBEbKMdUDTkPXy_hj63ZcoaaaG1aIgsLSBCeRD9Ed8GPkQp-4bX4GtQWqHW0Pw8G30zVprfMqZG70OgCmEmaFeFN-bakKx3cXkOaKFMajQ2_7VvdC7F4H8W-Yhc3vFfUnRiHU4ZMwoQ4dnNGbaxkghhASBYfOANGrnDzEEW-KTmX1AR)
+- **内容**: 英国の会計監査団体は、AIによる不正行為の懸念から、遠隔試験を中止すると発表した。英国政府は、AIが生成したヌーディフィケーションツールの禁止案など、ディープフェイクの悪用に対抗するための新たな計画を明らかにした。
+- **出典**: [UK AI News](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpcJ_zDawOe__g94L7xFBEbKMdUDTkPXy_hj63ZcoaaaG1aIgsLSBCeRD9Ed8GPkQp-4bX4GtQWqHW0Pw8G30zVprfMqZG70OgCmEmaFeFN-bakKx3cXkOaKFMajQ2_7VvdC7F4H8W-Yhc3vFfUnRiHU4ZMwoQ4dnNGbaxkghhASBYfOANGrnDzEEW-KTmX1AR)
+
+### 13. [AI主導の詐欺、国境を越えた紛争、暗号通貨の請求：詐欺と資産回収の洞察](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG18eUnKjSXkZ03jRP8c7uytjByn4IgZQ8oLeBgLpuXDoiFM1hrFhDI7RUTsysoNvVS18teaDXwa4m86Pb7JpOtOoaOpuKz-t1Tt6adf-3z4AlSokMeTSZHiQ0F67kY-NsbyT-QyvVT9X6aU3bFnXJgnFWNdHhgasP_x8n8p08eCfK4PgueN5JkxKdis_zPLQDVOHVVesHe-UQmvn4gCm7l7qVsQRtcxofpNjWaPxX9-om9E-zQJcygcICBwk9e10k=)
+- **内容**: AI主導およびIDベースの詐欺が急速に増加しており、AI対応詐欺は2024年に52％増加し（KPMG）、英国企業の3分の1が昨年ディープフェイクまたは合成IDの試みに直面した（PwC）。Europolは、ディープフェイク関連の事件が300％急増したと報告している。
+- **出典**: [Farrer & Co](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG18eUnKjSXkZ03jRP8c7uytjByn4IgZQ8oLeBgLpuXDoiFM1hrFhDI7RUTsysoNvVS18teaDXwa4m86Pb7JpOtOoaOpuKz-t1Tt6adf-3z4AlSokMeTSZHiQ0F67kY-NsbyT-QyvVT9X6aU3bFnXJgnFWNdHhgasP_x8n8p08eCfK4PgueN5JkxKdis_zPLQDVOHVVesHe-UQmvn4gCm7l7qVsQRtcxofpNjWaPxX9-om9E-zQJcygcICBwk9e10k=)
+
+## その他の注目見出し
+* [AI、詐欺、市場タイミングが2025年のバイオメトリクス統合を推進…そしておそらく2026年も](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFGvLy6mObql-DjmupHoASEaoGaSuiWcB3A-RvvL7kE79qVjC20ljsNXwXeaEMsuL5ZP3tJ1UFpeEpL1zzzJLrBaWr-f3bMDKpKtXP8WBSAle_pJIpKBNhqyOynqBI6FMiUHei0YB06-UBKpHPKX3y5LiGME2y7DHPAReZGOOCmH5XyRQrhSduLNz1Byo_OKyMb5hH3Y3GCZyzV07xy9FyAUJN7RFViduMMjUtmxsf1x4=) - BiometricUpdate.com
+* [「デジタル信頼：2025年の回顧と2026年の展望」](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFGvLy6mObql-DjmupHoASEaoGaSuiWcB3A-RvvL7kE79qVjC20ljsNXwXeaEMsuL5ZP3tJ1UFpeEpL1zzzJLrBaWr-f3bMDKpKtXP8WBSAle_pJIpKBNhqyOynqBI6FMiUHei0YB06-UBKpHPKX3y5LiGME2y7DHPAReZGOOCmH5XyRQrhSduLNz1Byo_OKyMb5hH3Y3GCZyzV07xy9FyAUJN7RFViduMMjUtmxsf1x4=) - BiometricUpdate.com
+* [ディープフェイクはリアルタイム合成に向かっており、検出システムの回避が容易になっている](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQjiKLSH0q5wNjLkjSso3Ec2pbrPY8zg-WOTEbqrSKOzkT0FbvU3nCKW5Irh0YolDB8MA7smb88l6ykE5asFIyrLT7ILuECiPIjvP9DBkl2tYcNfeTuTPRetX6S7L7sM-smvaXnG8yC7LPg7X84VpUA9Uz04mEJG7Q) - Fortune
+* [AIエージェントは、高度な1対多攻撃を、以前よりも少ないリソースと時間で実行できるようになる](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfjab8prpMjoNQhIu6gm52jyN8Ovjlf6Ags38NGYqeRSP1hsUFNIFVswzApIsez43BD8t-gEvlJ7z3_YA2jcNYIybu3zH2k-yYNAs3TwRyhQU7JY8Q2ma8upx1zUDnZigPrmeYUSWjV3CbIIDo0yulbHNJ7w==) - Reality Defender
+* [英国政府は、AIが生成したヌーディフィケーションツールの禁止案など、ディープフェイクの悪用に対抗するための新たな計画を明らかにした](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpcJ_zDawOe__g94L7xFBEbKMdUDTkPXy_hj63ZcoaaaG1aIgsLSBCeRD9Ed8GPkQp-4bX4GtQWqHW0Pw8G30zVprfMqZG70OgCmEmaFeFN-bakKx3cXkOaKFMajQ2_7VvdC7F4H8W-Yhc3vFfUnRiHU4ZMwoQ4dnNGbaxkghhASBYfOANGrnDzEEW-KTmX1AR) - UK AI News
