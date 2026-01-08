@@ -23,7 +23,48 @@ load_dotenv()
 # Configuration
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL", "packyas@gmail.com")
+# Recipient(s) (SECURITY):
+# - Do NOT hardcode recipient email addresses in source code.
+# - Set RECIPIENT_EMAIL via environment variables/secrets.
+# - You can provide a single address, multiple addresses separated by commas/semicolons/whitespace,
+#   or a JSON array string (e.g. '["a@example.com","b@example.com"]').
+
+def parse_recipient_emails(value):
+    if value is None:
+        return []
+    raw = str(value).strip()
+    if not raw:
+        return []
+
+    # JSON array support
+    if raw.startswith("["):
+        try:
+            parsed = json.loads(raw)
+            if isinstance(parsed, list):
+                items = [str(x).strip() for x in parsed]
+            else:
+                items = [raw]
+        except Exception:
+            items = [raw]
+    else:
+        # Split on common separators
+        for sep in [";", "\n", "\t", " "]:
+            raw = raw.replace(sep, ",")
+        items = [x.strip() for x in raw.split(",")]
+
+    # Deduplicate while preserving order
+    seen = set()
+    out = []
+    for x in items:
+        if not x:
+            continue
+        if x in seen:
+            continue
+        seen.add(x)
+        out.append(x)
+    return out
+
+RECIPIENT_EMAILS = parse_recipient_emails(os.getenv("RECIPIENT_EMAIL"))
 # Resend default from address if domain not verified
 SENDER_EMAIL = os.getenv("SENDER_EMAIL", "onboarding@resend.dev")
 
@@ -278,13 +319,16 @@ def send_email(subject, body):
     if not RESEND_API_KEY:
         print("RESEND_API_KEY not set.")
         return False
+    if not RECIPIENT_EMAILS:
+        print("RECIPIENT_EMAIL not set (no recipients configured). Skipping email send.")
+        return False
         
     try:
         html_content = generate_email_html(body)
-        print(f"DEBUG: Attempting to send multi-part email to {RECIPIENT_EMAIL} with subject: {subject}")
+        print(f"DEBUG: Attempting to send multi-part email to {RECIPIENT_EMAILS} with subject: {subject}")
         params = {
             "from": SENDER_EMAIL,
-            "to": RECIPIENT_EMAIL,
+            "to": RECIPIENT_EMAILS,
             "subject": subject,
             "text": body,
             "html": html_content
