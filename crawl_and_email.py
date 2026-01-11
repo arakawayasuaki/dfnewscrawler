@@ -12,6 +12,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseUpload
 import io
+import re
 from dotenv import load_dotenv
 
 # Define JST (Japan Standard Time)
@@ -101,6 +102,7 @@ def generate_report_with_gemini_search():
     - **必ず実際の検索結果に基づいた情報を出力してください。** 架空のニュースや、根拠のない推測を含めてはいけません。
     - **ダミーURLの禁止**: `example.com` や `google.com` などのプレースホルダーURLは**絶対に使用しないでください**。見つかった「実際のURL」のみを使用してください。
     - **URLの重複について**: 可能な限り異なるソースを使用することが望ましいですが、適切なソースが限られている場合は、情報の正確性を優先し、同じ信頼できるソースを引用しても構いません。**「形式のために嘘のURLを捏造すること」は最大の禁忌です。**
+    - **日付の厳守**: **現在（2026年）から1週間以内のニュースのみ**を採用してください。1ヶ月以上前のニュースは「最新」ではないため、絶対に含めないでください。検索結果の日付を必ず確認してください。
 
     【レポートの出力ルール】
     1. **挨拶・前置きの完全禁止**: 「はい」「承知いたしました」等は一切不要です。必ず `## 主要ニュースのまとめ` から開始してください。
@@ -109,26 +111,25 @@ def generate_report_with_gemini_search():
     【レポートの構成形式】
     ## 主要ニュースのまとめ (10〜15件程度)
     
-    ### 1. [記事のタイトル（日本語翻訳）](取得した実際のURL)
+    ### 1. 記事のタイトル（日本語翻訳）
     - **内容**: 具体的かつ客観的に3〜4文程度で記述（日本語）。
-    - **出典**: [メディア名・サイト名（日本語）](取得した実際のURL)
 
 
-    ### 2. [次の記事のタイトル（日本語翻訳）](取得した実際のURL)
+    ### 2. 次の記事のタイトル（日本語翻訳）
     - **内容**: ...
-    - **出典**: ...
 
 
     （実際の検索結果に基づき、10〜15件程度を同様の形式で継続）
 
 
     ## その他の注目見出し
-    * [記事タイトル（要日本語翻訳）](実際のURL) - メディア名
-    * (可能な限り多数、必ず実際のリンクを含めること)
+    ## その他の注目見出し
+    * 記事タイトル（要日本語翻訳） - メディア名
+    * (可能な限り多数)
 
     【検索と収集の指針】
     - **グローバル優先**: 英語等の多言語検索を行い、海外の主要ソースを50%以上含めてください。
-    - **鮮度の徹底**: 「今起きていること」を優先し、一般的な解説や古いニュースは除外してください。
+    - **鮮度の徹底**: 「今起きていること」を優先し、一般的な解説や古いニュースは除外してください。特に**2025年以前の記事（URLに2025が含まれるものなど）は古い情報として扱ってください**。常に最新(2026年)の動向であることを確認してください。
     """
     
     try:
@@ -143,14 +144,153 @@ def generate_report_with_gemini_search():
             contents=prompt,
             config=config
         )
-        summary = response.text
         
-        # Post-processing: Remove Gemini conversational filler and redundant titles
-        clean_summary = clean_gemini_output(summary)
+        # Post-processing: Inject citations and FILTER OUT items with no citations
+        text_with_links = filter_and_inject_grounding(response)
+        clean_summary = clean_gemini_output(text_with_links)
         return clean_summary
     except Exception as e:
         print(f"Error with Gemini Search: {e}")
+        import traceback
+        traceback.print_exc()
         return f"レポート生成中にエラーが発生しました: {e}"
+
+def filter_and_inject_grounding(response):
+    """
+    Parses the response text and grounding metadata to reconstruct the report.
+    CRITICAL: Any news item (main or bullet) that does not have a valid
+    grounding support (citation) is DISCARDED.
+    """
+    if not response.candidates or not response.candidates[0].content or not response.candidates[0].content.parts:
+        return ""
+    
+    text = response.text
+    if not text:
+        return ""
+        
+    gm = response.candidates[0].grounding_metadata
+    if not gm or not gm.grounding_chunks or not gm.grounding_supports:
+        # If no grounding at all, return empty (unsafe to show unsubstantiated news) or return text with warning?
+        # User wants strict grounding. Return empty or error message.
+        print("Warning: No grounding metadata found for the entire response.")
+        return "" # Choosing to return nothing to avoid hallucinations
+
+    chunks = gm.grounding_chunks
+    supports = gm.grounding_supports
+    
+    def get_links_for_range(start_byte, end_byte):
+        found_indices = set()
+        for sup in supports:
+            s_start = sup.segment.start_index
+            s_end = sup.segment.end_index
+            
+            # Use loose overlap checking: if support overlaps significantly with the item
+            # or is contained within it.
+            # Simple overlap: max(start_byte, s_start) < min(end_byte, s_end)
+            if max(start_byte, s_start) < min(end_byte, s_end):
+                 for idx in sup.grounding_chunk_indices:
+                     found_indices.add(idx)
+        
+        links = []
+        seen_uris = set()
+        for idx in sorted(list(found_indices)):
+             if 0 <= idx < len(chunks):
+                 c = chunks[idx]
+                 if c.web:
+                     title = c.web.title
+                     uri = c.web.uri
+                     if uri not in seen_uris:
+                         links.append(f"[{title}]({uri})")
+                         seen_uris.add(uri)
+        return links
+
+    def char_to_byte_index(char_idx):
+        return len(text[:char_idx].encode('utf-8'))
+
+    output_lines = []
+    
+    # --- Process Main News Section ---
+    main_header_match = re.search(r'(?m)^##\s+主要ニュース.*$', text)
+    other_header_match = re.search(r'(?m)^##\s+その他の注目見出し.*$', text)
+    
+    if main_header_match:
+        output_lines.append(main_header_match.group(0))
+        start_idx = main_header_match.end()
+    else:
+        # If structure is weird, fall back to returning nothing or text (risky)
+        # Let's try to parse from beginning
+        start_idx = 0
+
+    main_section_end = other_header_match.start() if other_header_match else len(text)
+    main_section_text = text[start_idx:main_section_end]
+    main_offset = start_idx
+    
+    item_matches = list(re.finditer(r'(?m)^###\s+(\d+)\.\s+(.*)$', main_section_text))
+    valid_item_count = 0
+    
+    for i, match in enumerate(item_matches):
+        item_start_rel = match.start()
+        if i < len(item_matches) - 1:
+            item_end_rel = item_matches[i+1].start()
+        else:
+            item_end_rel = len(main_section_text)
+            
+        abs_start = main_offset + item_start_rel
+        abs_end = main_offset + item_end_rel
+        
+        byte_start = char_to_byte_index(abs_start)
+        byte_end = char_to_byte_index(abs_end)
+        
+        links = get_links_for_range(byte_start, byte_end)
+        
+        if links:
+            valid_item_count += 1
+            # Reconstruct item
+            header_title = match.group(2).strip() # Title part after "### N. "
+            body_text = main_section_text[match.end():item_end_rel].strip()
+            
+            # Remove any pre-generated "出典:" lines from body to avoid duplication
+            body_lines = [line for line in body_text.split('\n') if "出典" not in line and "**Source**" not in line]
+            clean_body = "\n".join(body_lines).strip()
+            
+            new_item = f"\n\n### {valid_item_count}. {header_title}\n"
+            new_item += f"{clean_body}\n"
+            new_item += f"    - **出典**: {', '.join(links)}"
+            
+            output_lines.append(new_item)
+    
+    output_lines.append("\n\n")
+
+    # --- Process Other Headlines Section ---
+    if other_header_match:
+        output_lines.append(other_header_match.group(0))
+        other_start = other_header_match.end()
+        other_text = text[other_start:]
+        other_offset = other_start
+        
+        # Matches lines starting with "*"
+        bullet_matches = list(re.finditer(r'(?m)^\*\s+(.*)$', other_text))
+        
+        for match in bullet_matches:
+            line_start_rel = match.start()
+            line_end_rel = match.end()
+            
+            abs_start = other_offset + line_start_rel
+            abs_end = other_offset + line_end_rel
+            
+            byte_start = char_to_byte_index(abs_start)
+            byte_end = char_to_byte_index(abs_end)
+            
+            links = get_links_for_range(byte_start, byte_end)
+            
+            if links:
+                content = match.group(1).strip()
+                # Remove any existing links or " - Source" if it looks redundant
+                # But usually just appending is safer
+                new_line = f"\n* {content} - {', '.join(links)}"
+                output_lines.append(new_line)
+                
+    return "".join(output_lines)
 
 def clean_gemini_output(text):
     """
